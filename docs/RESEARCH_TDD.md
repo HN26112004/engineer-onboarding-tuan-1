@@ -49,4 +49,8 @@ Khi viết công cụ dòng lệnh CLI, Có 4 khu vực chính cần bao phủ b
 * Pha 3: Refactor: Chuẩn hóa kiểu dữ liệu TypeScript, tách hàm validation độc lập và thay thế ID bằng UUID mà không làm phá vỡ bộ test.
 ## 5. Appendix: AI Interaction Evidence
 - Link cuộc trò chuyện với AI
-- Ảnh chụp màn hình / minh chứng quá trình thảo luận và phản biện AI
+** Mục tiêu phiên làm việc: Nghiên cứu lý thuyết TDD, phân tầng kiểm thử, thiết lập kịch bản mẫu cho Ticket CLI và xây dựng quy trình kiểm soát mã nguồn AI sinh ra.
+** Chiến thuật tương tác đã áp dụng: 
+  - *Layered Questioning*: Đi từ tìm hiểu bản chất TDD -> Phân tích cấp độ Unit/Integration/E2E -> Xác lập quy trình AI Guardrail -> Viết code thực tế kèm phân tích ca biên.
+  - *Critical Refinement*: Chủ động đặt các câu hỏi phản biện về ranh giới áp dụng, rủi ro của việc mock quá mức và các ca biên (edge cases) trong xử lý CLI.
+** Link phiên bản trao đổi với AI:  https://gemini.google.com/app/ce7fb56f0e691d1e
