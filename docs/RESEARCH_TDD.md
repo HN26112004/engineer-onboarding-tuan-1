@@ -39,8 +39,14 @@ VÍ DỤ trong Ticket CLI: Chạy trực tiếp câu lệnh từ terminal (ví d
 * Chiến thuật 3: Kĩ thuật " Teach AI " ( Chỉnh nắn ngữ cảnh ): Khi phát hiện AI dùng hàm lỗi thời hoặc tự chế API không có thật, chỉ ro lỗi và cung cấp tài liệu chính xác ngay trong prompt tiếp theo, giúp chuẩn hóa ngữ cảnh của phiên trò chuyện, ngăn chặn AI tiếp tục lặp lại ảo giác ở các câu lệnh sau.
 ## 4. CLI Testing Best Practices & Code Examples
 - Các vùng cần test trong ứng dụng CLI (Arguments, Validation, File Storage, Errors)
+Khi viết công cụ dòng lệnh CLI, Có 4 khu vực chính cần bao phủ bài test:
+* CLI Arguments & Flag Parsing (Phân tích cú pháp cờ và tham số): Kiểm tra xem cờ bắt buộc có nhận đúng không; Kiểm tra giá trị mặc định khi người dùng không truyền cờ.
+* Input Valiation & Sanitization (Kiểm tra và chuẩn hóa dữ liệu đầu vào): Chặn chuỗi rỗng hoặc toàn khoảng trắng; Kiểm tra giá trị enumm hợp lệ.
+* File I/O  & State Persistence (Lưu trữ trạng thái tệp tin): Kiểm tra việc đọc/ghi file dữ liệu tickets.json; Xử lý trường hợp file chưa tồn tại; Xử lý trường hợp file bị hỏng dữ liệu mà không làm sập toàn bộ chương trình.
 - Ví dụ code kiểm thử minh họa (Red - Green - Refactor)
-
+* Pha 1: Red: Viết ca kiểm thử trước mô tả yêu cầu validate tiêu đề và gán trạng thái mặc định (Test thất bại do chưa có logic).
+* Pha 2: Green: Viết mã nguồn tối thiểu để test case chuyển sang trạng thái thành công.
+* Pha 3: Refactor: Chuẩn hóa kiểu dữ liệu TypeScript, tách hàm validation độc lập và thay thế ID bằng UUID mà không làm phá vỡ bộ test.
 ## 5. Appendix: AI Interaction Evidence
 - Link cuộc trò chuyện với AI
 - Ảnh chụp màn hình / minh chứng quá trình thảo luận và phản biện AI
